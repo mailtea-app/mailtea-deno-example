@@ -1,0 +1,16 @@
+{
+  "tasks": {
+    "start": "deno run --env-file --allow-net --allow-env main.ts",
+    "test": "deno test --allow-net --allow-env"
+  },
+  "lint": {
+    // Importing `npm:mailtea-sdk` inline is the point of the example: on Deno
+    // you depend on an npm package without a package.json.
+    "rules": { "exclude": ["no-import-prefix"] },
+    // Vendored from the Mailtea examples repo — kept byte-identical.
+    "exclude": ["test/mock-mailtea.mjs"]
+  },
+  "fmt": {
+    "exclude": ["test/mock-mailtea.mjs"]
+  }
+}
