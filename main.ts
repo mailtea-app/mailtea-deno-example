@@ -111,7 +111,7 @@ function required(name: string): string {
 
 if (import.meta.main) {
   const mailtea = new Mailtea(required("MAILTEA_API_KEY"), {
-    // Only needed for local dev or a self-hosted Mailtea. Omit in production.
+    // Optional override of the API host. Unset, the SDK uses https://api.mailtea.app.
     baseUrl: Deno.env.get("MAILTEA_API_BASE_URL"),
   });
 
